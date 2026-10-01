@@ -1,6 +1,6 @@
 # SignalAI
 
-## AI-Based Signal Analysis, Demodulation & Intelligence Platform
+# AI-Based Signal Analysis, Demodulation & Intelligence Platform
 
 > **Smart India Hackathon 2026 — Idea & Prototype Showcase**
 
@@ -8,7 +8,7 @@ SignalAI is a proposed AI-assisted platform for automated analysis of raw **`.IQ
 
 The platform is designed to reduce the manual effort involved in analysing recorded signals and provide a unified workflow for signal processing, parameter extraction, signal recovery, and bitstream investigation.
 
-> **Note:** This repository is an **Idea & Prototype Showcase** for Smart India Hackathon 2026. It is not the production implementation of the complete SignalAI system. Some advanced capabilities shown in the concept are planned or experimental.
+> **Important:** This repository is an **Idea & Prototype Showcase** for Smart India Hackathon 2026. It is not the production implementation of the complete SignalAI system. Advanced capabilities are clearly identified as prototype, experimental, or future functionality.
 
 ---
 
@@ -16,20 +16,23 @@ The platform is designed to reduce the manual effort involved in analysing recor
 
 | Field | Details |
 |---|---|
-| Problem Statement ID | **SIH26147** |
-| Problem Statement | **Automated model for analysis of .IQ and .wav files along with signal parameter extraction** |
-| Theme | **Miscellaneous** |
-| Category | **Software** |
-| Team | **TEAM HEXA 1** |
-| Project | **SignalAI** |
+| **Problem Statement ID** | SIH26147 |
+| **Problem Statement** | Automated model for analysis of .IQ and .wav files along with signal parameter extraction |
+| **Theme** | Miscellaneous |
+| **Category** | Software |
+| **Team ID** | 133299 |
+| **Team Name** | TEAM HEXA 1 |
+| **Project Name** | SignalAI |
+
+The original SIH problem focuses on automating the analysis of recorded `.IQ` and `.WAV` signals and extracting signal parameters that may otherwise require manual analysis. :contentReference[oaicite:1]{index=1}
 
 ---
 
 # 🎯 Problem Statement
 
-Raw signal recordings such as **IQ and WAV files** can contain useful communication information, but analysing them manually can be time-consuming.
+Raw signal recordings collected from the air can contain important information about communication signals. Analysing these recordings manually can require significant time and technical effort.
 
-Important signal characteristics may need to be identified, including:
+Signal parameters that may need to be identified include:
 
 - Modulation type
 - Sampling rate
@@ -39,29 +42,65 @@ Important signal characteristics may need to be identified, including:
 - FEC type
 - Interleaving information
 
-Real-world signals can also contain noise, interference, fading, and unknown parameters, making automated analysis challenging.
+The analysis can become more difficult when signals contain:
 
-SignalAI proposes a unified workflow to assist with these tasks.
+- Noise
+- Interference
+- Fading
+- Unknown parameters
+- Different modulation schemes
+- Large volumes of recorded samples
+
+The goal of SignalAI is to provide a unified interface that assists users in analysing these signals through an automated and structured workflow.
 
 ---
 
 # 💡 Proposed Solution
 
-**SignalAI** provides a single interface for analysing IQ/WAV recordings through a structured signal-processing pipeline.
+**SignalAI** proposes a unified platform for analysing raw IQ/WAV recordings.
+
+The overall workflow is:
 
 ```text
-Signal Input
-     ↓
-Preprocessing
-     ↓
-Parameter Identification
-     ↓
-Demodulation & Decoding
-     ↓
-De-interleaving
-     ↓
-FEC Decoding
-     ↓
-Bitstream Analysis
-     ↓
-Visualization & Results
+┌─────────────────────┐
+│    SIGNAL INPUT     │
+│      IQ / WAV       │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│   PREPROCESSING     │
+│ Filter / Normalize  │
+│ Resample / Denoise  │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ PARAMETER           │
+│ IDENTIFICATION      │
+│ DSP + AI/ML         │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│    DEMODULATION     │
+│ FSK / PSK / QAM     │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ DE-INTERLEAVING     │
+│       + FEC         │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ BITSTREAM ANALYSIS  │
+│ Pattern/Correlation │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ VISUALIZATION &     │
+│ RESULTS / REPORT    │
+└─────────────────────┘
