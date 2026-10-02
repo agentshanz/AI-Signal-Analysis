@@ -34,7 +34,7 @@ Instead of performing each analysis step manually, the prototype illustrates how
 
 **Figma Prototype:**
 
-> Add your SignalAI Figma prototype link here.
+> https://easing-theory-64388622.figma.site/
 
 ---
 
