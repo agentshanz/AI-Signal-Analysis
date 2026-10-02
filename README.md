@@ -84,7 +84,7 @@ The proposed workflow combines **signal-processing techniques with AI-assisted a
 
 ### Workflow Diagram
 
-![SignalAI Workflow](docs/workflow.jpeg)
+![SignalAI Workflow](docs/workflow.png)
 
 ---
 
